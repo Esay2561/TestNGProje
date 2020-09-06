@@ -13,9 +13,10 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
         driver.get("https://the-internet.herokuapp.com/context_menu");
         WebElement element = driver.findElement(By.id("hot-spot"));
         Actions actions = new Actions(driver);
-        // bir webelement'e sağ tıklamak için bu kodu kullanırız.
+
+
+        actions.contextClick(element).perform(); // bir webelement'e sağ tıklamak için bu kodu kullanırız.
         // actions class ile işlem yaparsanız, HER SEFERİNDE "PERFORM" yapmak zorundasınız.
-        actions.contextClick(element).perform();
     }
 
     @Test
@@ -23,9 +24,9 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
         driver.get("http://demo.guru99.com/test/simple_context_menu.html");
         WebElement button = driver.findElement(By.xpath("//button[@ondblclick='myFunction()']"));
         Actions actions = new Actions(driver);
-        // bir webelement'e iki kere tıklamak istiyorsak, doubleClick
+
+        actions.doubleClick(button).perform(); // bir webelement'e iki kere tıklamak istiyorsak, doubleClick
         // methodunu kullanabiliriz.
-        actions.doubleClick(button).perform();
     }
 
     @Test
@@ -33,9 +34,9 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
         driver.get("http://amazon.com");
         WebElement menu = driver.findElement(By.id("nav-link-accountList"));
         Actions actions = new Actions(driver);
-        // mouse'u istediğimiz webelement'in üzerine götürmek istiyorsak,
+
+        actions.moveToElement(menu).perform();   // mouse'u istediğimiz webelement'in üzerine götürmek istiyorsak,
         // moveToElement methodunu kullabiliriz.
-        actions.moveToElement(menu).perform();
     }
 
     @Test

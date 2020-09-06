@@ -61,10 +61,8 @@ public class JSAlertTest {
         //<button onclick="jsPrompt()">Click for JS Prompt</button>
         WebElement button = driver.findElement(By.xpath("//button[@onclick='jsPrompt()']"));
         button.click();
-
         String mesaj = driver.switchTo().alert().getText();
         System.out.println(mesaj);
-
         driver.switchTo().alert().sendKeys("Merhaba TestNG");
         driver.switchTo().alert().accept();
 
