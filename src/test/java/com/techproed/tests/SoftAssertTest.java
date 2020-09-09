@@ -62,7 +62,8 @@ public class SoftAssertTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        softAssert.assertTrue(driver.getTitle().equals("Deneme"));
+
+
 
         WebElement sifreKutusu = driver.findElement(By.id("session_password"));
         sifreKutusu.sendKeys("Test1234!");

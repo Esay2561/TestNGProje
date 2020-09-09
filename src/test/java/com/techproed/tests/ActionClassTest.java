@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class ActionClassTest extends com.techproed.utilities.TestBase {
 
     @Test
-    public void sagTiklama(){
+    public void sagTiklama() {
         driver.get("https://the-internet.herokuapp.com/context_menu");
         WebElement element = driver.findElement(By.id("hot-spot"));
         Actions actions = new Actions(driver);
@@ -20,7 +20,7 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
     }
 
     @Test
-    public void ciftTiklama(){
+    public void ciftTiklama() {
         driver.get("http://demo.guru99.com/test/simple_context_menu.html");
         WebElement button = driver.findElement(By.xpath("//button[@ondblclick='myFunction()']"));
         Actions actions = new Actions(driver);
@@ -30,7 +30,7 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
     }
 
     @Test
-    public void hoverOver(){
+    public void hoverOver() {
         driver.get("http://amazon.com");
         WebElement menu = driver.findElement(By.id("nav-link-accountList"));
         Actions actions = new Actions(driver);
@@ -40,7 +40,7 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
     }
 
     @Test
-    public void asagiYukari(){
+    public void asagiYukari() {
         driver.get("http://amazon.com");
         Actions actions = new Actions(driver);
 
@@ -64,5 +64,41 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
 
     }
 
+    @Test
+    public void buyukKucukYazma() {
 
+        // MERHABA nasılsınız
+
+        driver.get("http://google.com");
+        // name="q"
+        WebElement aramaKutusu = driver.findElement(By.name("q"));
+
+        // bu standart yazma methodumuz
+        //aramaKutusu.sendKeys("merhaba nasılsınız");
+
+        // bu şekilde her karakteri büyük yapar
+        // aramaKutusu.sendKeys(Keys.SHIFT + "merhaba nasılsınız");
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(aramaKutusu).click()
+                .keyDown(Keys.SHIFT)
+                .sendKeys("merhaba")
+                .keyUp(Keys.SHIFT)
+                .sendKeys(" nasılsınız")
+                .perform();
+
+    }
+
+    @Test
+    public void dragAndDrop() {  // sürükle - bırak
+        driver.get("http://google.com");
+        WebElement aramaKutusu = driver.findElement(By.name("q"));
+        WebElement logo = driver.findElement(By.id("hplogo"));
+
+        Actions actions = new Actions(driver);
+        // logo webelementini, aramaKutusu webelementine sürükle ve bırak.
+        actions.dragAndDrop(logo, aramaKutusu).perform();
+
+
+    }
 }
