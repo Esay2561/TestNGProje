@@ -9,7 +9,7 @@ import javax.xml.bind.SchemaOutputResolver;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FileDownloadTest extends TestBase {
+public class Unuttum extends TestBase {
 
     @Test
     public void dosyaVarMi(){
