@@ -9,6 +9,20 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+       /*
+
+***** Bulmamız gereken webelementler.
+IDHotel, Code, Name, Location, Description, Price, 500, Room type,
+Max Adult count, Max Children count, Approved, Save
+1. Adım : Tüm webelementleri "pages" paketinin altında oluşturacağımız, FhcTripHotelRoomCreatePage class'ının içerisinde @FindBy şeklinde bulalım.
+2. Adım : smoketests -> FhcTripHotelRoolCreateTest class oluşturalım.
+3. Adım : FhcTripHotelRoolCreateTest class'ının içerisinde @Test methodu oluşturacağız.
+4. Adım : driver.get(ConfigurationReader.getProperty("room_create_url")) ile HotelRoomCreate sayfasına gidelim.
+5. Adım : FhcTripHotelRoomCreatePage class'ından nesne oluşturalım ve içerisindeki webelementleri kullanalım.
+6. Adım : WebElementlerin içerisini dolduralım.
+ */
+
+
 
 public class FhcTripHotelRoomCreateTest extends TestBase {
     public void giris() {

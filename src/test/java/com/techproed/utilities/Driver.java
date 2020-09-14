@@ -8,16 +8,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
-
 
     //Driver class, driver instance'i baslatmak icin kullanilir.(Sinngleton Driver)
     //Ihtiyacimiz oldugunda driver'i kurmak ve baslatmak icin kullaniriz.
     //Driver null oldugunda create edip baslatacagiz.(if driver==null)
     //Driver classi farkli browserlar(tarayici) ile de kullanacagimiz sekilde olusturacagiz.
+    //// WebDriver nesnemizi, static olarak oluşturduk, çünkü program başlar başlamaz
+    //// hafızada yer almasını istiyoruz.
+    //static WebDriver driver;
 
     private Driver(){
         //Baska obje olusturulmasini istemedigimiz icin create ediyoruz.
@@ -45,7 +46,7 @@ public class Driver {
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driver = new SafariDriver();
                     break;
-                case "headless-chrome":
+                case "headless-chrome"://arayuz gormeden islem yapiyor
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
@@ -61,6 +62,6 @@ public class Driver {
         if(driver!=null){  //eger driver chrome'u isaret ediyorsa
             driver.quit();  // driver'i kapat
             driver=null; // driver'in null oldugundan emin olmak icin tekrar null olarak atayalim.
-        }               //Boylelikle driver'i tekrar baslatabilirim.
+        }               //Boylelikle driver'i tekrar baslatabilirim.driveri hafizadan temizle
     }                   //Multi Browser Test(chrome, firefox, ie ...) yaparken bu onemli olacaktir.
-}
+}                       //driver.close driver ile kapatabilirsiniz
