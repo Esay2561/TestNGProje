@@ -15,11 +15,11 @@ public class GlbSignUpTest {
          *           ConfigurationReader kullanarak, properties file'dan alalım.
          * 4. Adım : Sign-Up butonuna tıklayalım.
          * 5. Adım : Success yazısını görüp görmediğimi Assert ile doğrulayalım.
-         *
+         * //https://www.glbtrader.com/register-verified.html
          */
-        //https://www.glbtrader.com/register-verified.html
+
         Driver.getDriver().get(ConfigurationReader.getProperty("glb_login"));
-        GlbSignUpPage glbSignUpPage = new GlbSignUpPage();
+        GlbSignUpPage glbSignUpPage = new GlbSignUpPage();//Nesne uretince diger classlardan alabiliriz
         glbSignUpPage.emailKutusu.sendKeys(ConfigurationReader.getProperty("glb_email"));
         glbSignUpPage.nameKutusu.sendKeys(ConfigurationReader.getProperty("glb_name"));
         glbSignUpPage.mobileKutusu.sendKeys(ConfigurationReader.getProperty("glb_phone"));

@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite - Test Grupları">
+    <test name="grubu 'glbtrader' olan testler">
+        <groups>
+            <run>
+                <!-- include derseniz, sadece sizin yazdığınız GRUPTAKİ testleri çalıştırır. -->
+                <!-- exlude derseniz, yazdığınız GRUBUN DIŞINDAKİ testleri çalıştırır -->
+                <include name="glbtrader"></include>
+            </run>
+        </groups>
+        <packages>
+            <package name=".*"></package>
+        </packages>
+    </test>
+</suite>
+
+
