@@ -14,8 +14,10 @@ public abstract class TestBaseFinal {
     protected WebDriver driver;
     protected static ExtentReports extentReports;
     protected static ExtentTest extentTest;
-    protected static ExtentHtmlReporter extentHtmlReporter;
-    @BeforeTest(alwaysRun = true)
+    protected static ExtentHtmlReporter extentHtmlReporter;//ustteki 3 adet degisken sabit olarak olusturulur .
+    //bunlar kalip ekledigimiz kutuphanelerle alakali
+    @BeforeTest(alwaysRun = true)//herzaman calistir.
+    //before test test islemine baslamadan once calisir .
     public void setUpTest() {//This is how to set up Extent report. We will create and use this one in out test classes
         extentReports = new ExtentReports();//1. create object to set the location of the report
         String filePath = System.getProperty("user.dir") + "/test-output/myprojectreport.html";//create a custom report in the current project.
@@ -24,11 +26,12 @@ public abstract class TestBaseFinal {
         extentHtmlReporter = new ExtentHtmlReporter(filePath);//2. creating the report with the path we created
         extentReports.attachReporter(extentHtmlReporter);//3. attaching the html report to our custom report
         //WE CAN ADD CUSTOM INFO. NOT NECESSARY. JUST TO GIVE MORE INFORMATION TO THE USER OR TEAM
+       //istediginiz bilgileri buraya ekleyebilirsiniz
         extentReports.setSystemInfo("Environment", "Environment Name");
         extentReports.setSystemInfo("Browser", ConfigurationReader.getProperty("browser"));
         extentReports.setSystemInfo("Automation Engineer", "ENGINEER INFORMATION");
-        extentHtmlReporter.config().setDocumentTitle("FHC Trip Reports");
-        extentHtmlReporter.config().setReportName("FHC Trip Automation Reports");
+        extentHtmlReporter.config().setDocumentTitle("Google Arama Testi");
+        extentHtmlReporter.config().setReportName("Google Arama Automation Reports");
     }
     @AfterMethod(alwaysRun = true)//In AfterMethod, we are getting the screenshots and attaching the report when test fails
     public void tearDownMethod(ITestResult result) throws IOException {
@@ -45,5 +48,5 @@ public abstract class TestBaseFinal {
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         extentReports.flush();
-    }
+    }//ile raporu bitiriyoruz.
 }
