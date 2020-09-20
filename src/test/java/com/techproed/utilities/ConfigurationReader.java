@@ -5,6 +5,7 @@ public class ConfigurationReader {
     // ConfigurationReader class'ını projemizin heryerinden
     // nesne üretmeden, miras almadan kullanabilecek şekilde tasarlayalım.
     // static : program çalışır çalışmaz, bellekte yer tutmaya yarayan keyword
+
     static Properties properties;
     static{
         // okumak istediğimiz configuration.properties file'ın dosya yolu
