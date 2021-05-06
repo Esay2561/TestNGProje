@@ -2,8 +2,8 @@
 <suite name="Paralel Test 2" parallel="classes" thread-count="2">
     <test name="Class Paralel">
         <classes>
-            <class name="com.techproed.tests.FhcTripHotelCreateTest"></class>
-            <class name="com.techproed.tests.AmazonTest"></class>
+            <class name="com.techproed.tests.D17_FhcTripHotelCreateTest"></class>
+            <class name="com.techproed.tests.D14_AmazonTest"></class>
             <class name="com.techproed.tests.WaitTest"></class>
             <class name="com.techproed.tests.Ornek_WebTable"></class>
         </classes>

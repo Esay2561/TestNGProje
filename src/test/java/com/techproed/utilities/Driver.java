@@ -1,6 +1,5 @@
 package com.techproed.utilities;
 
-import com.techproed.utilities.ConfigurationReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +24,7 @@ public class Driver {
     }
 
     //driver instance olusturalim
-    static WebDriver driver;
+    public static WebDriver driver;
     //driver'i baslatmak icin statik bir metod olusturalim
     public static WebDriver getDriver(){
         if(driver==null){

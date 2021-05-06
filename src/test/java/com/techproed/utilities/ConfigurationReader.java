@@ -23,7 +23,14 @@ public class ConfigurationReader {
         }
     }
     //  properties.getProperty("username")  --> manager2
-    public static String getProperty(String key){
-        return properties.getProperty(key);
+    //static bir metod yazacagiz   neden static nesne uretmeyecegiz dogrudan erisim istiyoruz
+    //dosyada okuyacagimizdegerler string oldugu icin veri tipine  String yazdik isminede anlasilir olsun diye getproperty dedik
+    // ve properties icindeki verileri okuyalim
+    public static String getProperty(String key){//paremetre seklinde aldik her zaman String olur unutma
+        //okumak icin properties.getProperty(key);icine paremetre olarak okumak istediginiz keyin anahtarini mesela username
+        return properties.getProperty(key);//bu sekilde yazdik cunki diger classlardakullanacagiz
+//bu kalipla projemizin her yerinden ulasabiliriz .
     }
+
+
 }

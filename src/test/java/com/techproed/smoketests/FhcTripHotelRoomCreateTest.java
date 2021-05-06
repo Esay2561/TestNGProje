@@ -27,7 +27,8 @@ Max Adult count, Max Children count, Approved, Save
 public class FhcTripHotelRoomCreateTest extends TestBase {
     public void giris() {
         driver.findElement(By.id("UserName")).sendKeys(ConfigurationReader.getProperty("username"));
-        driver.findElement(By.id("Password")).sendKeys(ConfigurationReader.getProperty("password") + Keys.ENTER);
+        driver.findElement(By.id("Password")).
+                sendKeys(ConfigurationReader.getProperty("password") + Keys.ENTER);
     }
 
     @Test
@@ -44,10 +45,15 @@ public class FhcTripHotelRoomCreateTest extends TestBase {
         page.nameKutusu.sendKeys("Hamza Yılmaz");
         page.locationKutusu.sendKeys("Almanya");
         page.descKutusu.sendKeys("Day 20'den selamlar..");
-        Actions actions = new Actions(driver);
-        actions.dragAndDrop(page.price500, page.priceKutusu).perform();
-        Select select1 = new Select(page.idGroupRoomTypeDropDown);
+
+        Actions actions = new Actions(driver);//dragAndDrop  ( TUT SURUKLE)   KULLANMAK ICIN ACTION CLASSTANNESNE URETUYORUZ .
+        //PAREMETRE OLARAKDA DRIVER GONDERMEMIZ LAZIM
+        actions.dragAndDrop(page.price500, page.priceKutusu).perform();//ILK BOLUME TASINACAK OGE   IKINCI BOLUME TASINANYER
+      //ACTION CLASINI BIRKERE OLUSTURMAK YETERLI AMA
+        //SELECT NESNESINI HER DROPDOWN ICIN OLUSTURMALISINIZ
+        Select select1 = new Select(page.idGroupRoomTypeDropDown);//DROPDOWN ICIN SELECT NESNESI URETMELIYIZ.
         select1.selectByIndex(2);
+
         page.maxAdultCountKutusu.sendKeys("2");
         page.maxChildCountKutusu.sendKeys("5");
         page.saveButonu.click();

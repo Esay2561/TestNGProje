@@ -76,7 +76,7 @@
         </pattern>
     </extension>
     <option name="PACKAGE_NAME" value="com.techproed.tests" />
-    <option name="MAIN_CLASS_NAME" value="com.techproed.tests.GoogleAramaTest" />
+    <option name="MAIN_CLASS_NAME" value="com.techproed.tests.D22_GoogleAramaTest" />
     <option name="TEST_OBJECT" value="CLASS" />
     <properties />
     <listeners />
@@ -96,7 +96,7 @@
         </pattern>
     </extension>
     <option name="PACKAGE_NAME" value="com.techproed.tests" />
-    <option name="MAIN_CLASS_NAME" value="com.techproed.tests.GoogleAramaTest" />
+    <option name="MAIN_CLASS_NAME" value="com.techproed.tests.D22_GoogleAramaTest" />
     <option name="METHOD_NAME" value="aramaTesti" />
     <option name="TEST_OBJECT" value="METHOD" />
     <properties />

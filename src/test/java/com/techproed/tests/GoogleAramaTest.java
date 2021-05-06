@@ -16,10 +16,9 @@ public class GoogleAramaTest extends TestBaseFinal {
     @Test
     public void aramaTesti() throws InterruptedException {
         extentTest  = extentReports.createTest("Google Arama","Google'da techproeducation araması yaptık.");
-        //kaliplari iyi ogren nerde ne kullanilir .
         extentTest.info("sayfa adresine git.");
         Driver.getDriver().get(ConfigurationReader.getProperty("google_link"));
-        extentTest.info("webelementleri kullanabilmek için nesne oluştur.");//tumyapacagin islemlerden once bilgi veriyoruz
+        extentTest.info("webelementleri kullanabilmek için nesne oluştur.");
         GoogleAramaPage googleAramaPage = new GoogleAramaPage();
         extentTest.info("techproeducation araması yap.");
         googleAramaPage.aramaKutusu.sendKeys("techproeducation" + Keys.ENTER);
@@ -28,13 +27,13 @@ public class GoogleAramaTest extends TestBaseFinal {
         extentTest.info("tüm linkleri karşılaştır.");
         boolean linkVarMi = false;
         for(WebElement w : googleAramaPage.tumLinkler){
-            if(w.getText().contains("techproeducation.com")){
+            if(w.getText().contains("techproeducation123.com")){
                 linkVarMi = true;
                 break;
             }
         }
         extentTest.info("assert işlemi yap.");
         Assert.assertTrue(linkVarMi);
-        extentTest.info("Testimiz PASSED !");
+        extentTest.pass("Testimiz PASSED !");
     }
 }

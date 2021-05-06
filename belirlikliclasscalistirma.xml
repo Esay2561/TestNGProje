@@ -2,20 +2,18 @@
 <suite name="Suite - fhctrip-qa.com">
     <test name="Test - fhctrip-qa testleri">
 
-        <suite name="Suite - glbrader.com">
-            <test name="Test - GlbSignUpTest testleri">
+
                 <!-- XML dosyasında değişiklik yaptıktan sonra, dosyayı CTRL+S
                      ile ya da File->Save All ile kaydetmeniz gerekiyorç
                 -->
 
-                <classes>
+                <classes> <!--CLASS YAZIP ISTEDIGINIZ CLASSLARI YAZMA   -->
                     <class name="com.techproed.tests.Ornek_WebTable"></class>
-                    <class name="com.techproed.tests.FhcTripLoginTest"></class>
-                    <class name="com.techproed.tests.FhcTripHotelCreateTest"></class>
+                    <class name="com.techproed.tests.D16_FhcTripLoginTest"></class>
+                    <class name="com.techproed.tests.D17_FhcTripHotelCreateTest"></class>
                     <class name="com.techproed.smoketests.GlbSignUpTest"></class>
                 </classes>
             </test>
-
 
             <test name="Test - Facebook Testler">
                 <classes>

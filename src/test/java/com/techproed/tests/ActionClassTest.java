@@ -7,15 +7,16 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class ActionClassTest extends com.techproed.utilities.TestBase {
-
+//D7
     @Test
     public void sagTiklama() {
         driver.get("https://the-internet.herokuapp.com/context_menu");
         WebElement element = driver.findElement(By.id("hot-spot"));
-        Actions actions = new Actions(driver);
+        //webelementi bulduktan sonrqa action classtan nesne uretiebiliriz
+        Actions actions = new Actions(driver);//paremetre driver
 
-
-        actions.contextClick(element).perform(); // bir webelement'e sağ tıklamak için bu kodu kullanırız.
+        actions.contextClick(element).perform(); // once web elenti bulduk sonra kod yazdik
+        // bir webelement'e sağ tıklamak için bu kodu kullanırız.
         // actions class ile işlem yaparsanız, HER SEFERİNDE "PERFORM" yapmak zorundasınız.
     }
 
@@ -26,7 +27,7 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
         Actions actions = new Actions(driver);
 
         actions.doubleClick(button).perform(); // bir webelement'e iki kere tıklamak istiyorsak, doubleClick
-        // methodunu kullanabiliriz.
+        // methodunu kullanabiliriz.cifttiklamak istedigimizi web elementi yaziyoruz burada buttomdi
     }
 
     @Test
@@ -38,13 +39,13 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
         actions.moveToElement(menu).perform();   // mouse'u istediğimiz webelement'in üzerine götürmek istiyorsak,
         // moveToElement methodunu kullabiliriz.
     }
-
+        //klavye butonlari icin
     @Test
     public void asagiYukari() {
         driver.get("http://amazon.com");
         Actions actions = new Actions(driver);
 
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();//asagi gittik
 
         try {
             Thread.sleep(2000);
@@ -52,7 +53,7 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
             e.printStackTrace();
         }
 
-        actions.sendKeys(Keys.END).perform();
+        actions.sendKeys(Keys.END).perform();//pagedown yeterli olmadigi icin end yazdik
 
         try {
             Thread.sleep(2000);
@@ -60,14 +61,14 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
             e.printStackTrace();
         }
 
-        actions.sendKeys(Keys.PAGE_UP).perform();
+        actions.sendKeys(Keys.PAGE_UP).perform();//ustte gitmek icin
 
     }
 
     @Test
     public void buyukKucukYazma() {
 
-        // MERHABA nasılsınız
+        // MERHABA nasılsınız//SHIFTE BASILI TUTARAK YAZARSANIZ BUYUK YAZAR BIRAKIRSANIZ KUCUKYAZAR
 
         driver.get("http://google.com");
         // name="q"
@@ -78,14 +79,15 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
 
         // bu şekilde her karakteri büyük yapar
         // aramaKutusu.sendKeys(Keys.SHIFT + "merhaba nasılsınız");
-
-        Actions actions = new Actions(driver);
-        actions.moveToElement(aramaKutusu).click()
-                .keyDown(Keys.SHIFT)
+// SHIFTE BASILI TUTARAK BUYUK HARFLE YAZDIRIYORUZ
+        Actions actions = new Actions(driver);//action class nesnesi urettik ki butonlara tiklayalim
+        actions.moveToElement(aramaKutusu).click()//mousu web elementin uzerune goturur biz dedikki aramakutusuna
+                //git ve tikla
+                .keyDown(Keys.SHIFT)//Keys.SHIFT demek  shifte basili tutuyor
                 .sendKeys("merhaba")
-                .keyUp(Keys.SHIFT)
+                .keyUp(Keys.SHIFT)//shifftten kaldiriyor elini kaldir demek
                 .sendKeys(" nasılsınız")
-                .perform();
+                .perform();//mutlaka yazilmali
 
     }
 
@@ -97,7 +99,8 @@ public class ActionClassTest extends com.techproed.utilities.TestBase {
 
         Actions actions = new Actions(driver);
         // logo webelementini, aramaKutusu webelementine sürükle ve bırak.
-        actions.dragAndDrop(logo, aramaKutusu).perform();
+        actions.dragAndDrop(logo, aramaKutusu).perform();//parentez icine tasimakistedigin elementi ve nereye tasiyacagini
+        //yazmalisin    target    hedef
 
 
     }

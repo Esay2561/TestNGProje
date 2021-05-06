@@ -26,3 +26,4 @@ public class Ornek_WebTable extends TestBase {
             driver.findElement(By.id("Password")).sendKeys("Man1ager2!"+ Keys.ENTER);
     }
 }
+//D12 ORNEK WEB TABLE

@@ -8,12 +8,13 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 public abstract class TestBase {
+    //testbase clasi  testbasefinal  clasindan sonra kullanmiyoruz
     // private -> sadece aynı class
     // default -> aynı pakette
     // protected -> aynı paket + child class'larda
     // public -> heryerde
 
-    protected WebDriver driver;
+    protected WebDriver driver;//INSTANCE VARIABLEOLUSTURDUK
     @BeforeClass
     public void setUp(){
         WebDriverManager.chromedriver().setup();

@@ -4,8 +4,16 @@
         <groups>
             <run>
                 <!-- include derseniz, sadece sizin yazdığınız GRUPTAKİ testleri çalıştırır. -->
-                <!-- exlude derseniz, yazdığınız GRUBUN DIŞINDAKİ testleri çalıştırır -->
+                <!-- exlude derseniz, yazdığınız GRUBUN DIŞINDAKİ testleri çalıştırır
+                istediginiz kadar grp calistirabilirsiniz
+                 kalipkodu yapistir
+                    alta <groups>  ac icine run  ac run icine dahil etmek istedigin grplari yaz
+                    group altina hangi giplari istiyorsan hedef vermen lazim
+                     hedef bolumunu yaziyorsun mesela paketler veya classlar
+
+                    -->
                 <include name="glbtrader"></include>
+                <include name="fhctrip"></include>
             </run>
         </groups>
         <packages>

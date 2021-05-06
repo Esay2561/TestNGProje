@@ -9,7 +9,6 @@ public class AmazonNewPage {
     }
     @FindBy ( id = "twotabsearchtextbox" )
     public WebElement aramaKutusu;
-
     @FindBy ( xpath = "//input[@value='Go']")
     public WebElement aramaButonu;
 }
